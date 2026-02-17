@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Niuro - Chilean tech company connecting top LATAM talent with global opportunities. USD salaries, 1-7 day process.">
+    <title>Niuro Careers — Join the Dev2Dev Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --dark: #0b1120;
+            --primary: #625fff;
+            --secondary: #006097;
+            --yellow: #ffd166;
+            --light: #f8fafc;
+            --text: #101828;
+            --sub: #64748b;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--dark);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        h1, h2 { font-family: 'Montserrat', sans-serif; }
+        .container {
+            max-width: 720px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo-wrap {
+            margin-bottom: 2rem;
+        }
+        .logo-wrap svg { width: 160px; height: auto; }
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #625fff, #006097);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--sub);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .lang-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.25s ease;
+        }
+        .lang-card:hover {
+            background: rgba(98, 95, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(98, 95, 255, 0.15);
+        }
+        .flag { font-size: 2rem; line-height: 1; }
+        .lang-info { text-align: left; }
+        .lang-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.15rem;
+        }
+        .lang-region {
+            font-size: 0.8rem;
+            color: var(--sub);
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--sub);
+            font-size: 0.8rem;
+        }
+        .footer a { color: var(--primary); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 500px) {
+            .lang-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-wrap">
+            <svg viewBox="0 0 2000 666" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;">
+                <g transform="matrix(4.166667,0,0,1.386098,0,0)">
+                    <g transform="matrix(1,0,0,3.00604,0,-389.363456)">
+                        <path d="M447.45,245.893C417.168,267.676 382.82,236.558 399.968,206.576C411.693,186.076 456.515,185.573 457.659,223.765C458.038,236.412 448.903,244.592 447.45,245.893L412.409,210.048C398.222,228.489 420.123,252.115 437.864,238.556C450.528,228.876 446.536,203.636 426.261,203.282C418.224,203.142 413.203,209.105 412.409,210.048L447.45,245.893Z" style="fill:#fff;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,3.00604,0,-426.782638)">
+                        <path d="M228.495,219.371C220.483,211.921 210.8,215.29 206.254,221.692C202.485,226.998 205.176,258.895 203.872,263.07C203.078,265.615 192.957,264.681 192.235,263.845C191.068,262.494 191.15,225.198 191.52,223.944C198.553,200.082 226.171,203.11 235.421,210.325C246.644,219.076 245.073,225.859 245.216,261.896C245.228,265.05 241.406,264.916 235.27,264.618C233.153,264.516 233.088,264.057 233.044,261.902C232.448,232.805 234.701,226.169 228.495,219.371Z" style="fill:#fff;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,3.00604,0,-391.15205)">
+                        <path d="M337.546,247.495C319.553,260.577 293.457,252.25 292.784,229.505C292.702,226.739 291.807,196.495 293.074,194.916C293.658,194.188 303.806,193.267 304.802,195.689C305.402,197.15 304.501,231.624 305.83,234.765C306.438,236.203 311.485,246.083 323.576,242.891C332.108,240.638 332.915,233.728 333.044,232.618C334.678,218.621 332.551,195.232 334.748,194.378C334.874,194.329 344.852,193.413 345.725,194.867C345.91,195.173 346.787,230.699 344.733,236.568C344.387,237.555 342.455,243.077 337.546,247.495Z" style="fill:#fff;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,3.00604,0,-411.277485)">
+                        <path d="M367.148,207.901C367.779,207.38 367.77,207.483 368.367,206.991C368.642,206.764 368.544,206.751 368.827,206.516C375.063,201.362 386.293,200.536 387.213,201.322C388.101,202.081 388.038,207.893 388.032,208.468C387.994,211.934 386.519,210.973 383.212,211.863C382.59,212.03 378.318,213.18 376.262,215.928C371.332,222.52 374.408,249.402 373.567,257.73C373.337,260.003 366.394,259.584 363.635,259.462C360.357,259.318 361.378,253.061 361.399,249.55C361.604,216.649 360.682,215.738 367.148,207.901Z" style="fill:#fff;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,3.00604,0,-413.093175)">
+                        <path d="M266.949,209.139C266.989,207.476 266.858,205.014 266.944,203.597C267.024,202.305 272.684,201.613 275.668,201.773C278.217,201.911 278.254,202.786 278.232,204.805C278.043,222.273 278.802,256.143 277.914,258.152C277.439,259.224 267.62,260.195 267.004,258.531C266.178,256.302 266.707,219.206 266.949,209.139Z" style="fill:#fff;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,3.00604,0,-411.277485)">
+                        <path d="M276.312,197.019C274.854,198.992 270.026,199.424 268.289,197.019C266.143,194.043 268.537,189.735 272.131,189.735C275.838,189.735 278.362,194.247 276.312,197.019Z" style="fill:#fff;"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <h1>Join the Dev2Dev Community</h1>
+        <p class="subtitle">Your career, next level. Choose your language to learn more about working with Niuro.</p>
+
+        <div class="lang-grid">
+            <a href="en.html" class="lang-card">
+                <span class="flag">🇺🇸</span>
+                <div class="lang-info">
+                    <div class="lang-name">English</div>
+                    <div class="lang-region">International</div>
+                </div>
+            </a>
+            <a href="es-cl.html" class="lang-card">
+                <span class="flag">🇨🇱</span>
+                <div class="lang-info">
+                    <div class="lang-name">Español</div>
+                    <div class="lang-region">Chile</div>
+                </div>
+            </a>
+            <a href="es-latam.html" class="lang-card">
+                <span class="flag">🌎</span>
+                <div class="lang-info">
+                    <div class="lang-name">Español</div>
+                    <div class="lang-region">LATAM</div>
+                </div>
+            </a>
+            <a href="pt-br.html" class="lang-card">
+                <span class="flag">🇧🇷</span>
+                <div class="lang-info">
+                    <div class="lang-name">Português</div>
+                    <div class="lang-region">Brasil</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p><a href="https://niuro.io">niuro.io</a> &mdash; hiring@niuro.io</p>
+        </div>
+    </div>
+</body>
+</html>
