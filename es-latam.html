@@ -1,431 +1,827 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Únete a Niuro - Empresa tech chilena. Salarios en USD, proceso en 1-7 días. Proyectos reales de IA y tecnología propia.">
-    <title>Niuro Careers - Creado por Ingenieros, para Ingenieros | Trabajo Remoto en USD</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Montserrat & Inter (niuro.io fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        heading: ['Montserrat', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        niuro: {
-                            dark: '#0b1120',
-                            primary: '#625fff',
-                            secondary: '#006097',
-                            yellow: '#ffd166',
-                            orange: '#ff9f0a',
-                            light: '#f8fafc',
-                            text: '#101828',
-                            sub: '#64748b'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(to right, #625fff, #006097);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card-highlight {
-            transition: all 0.3s ease;
-        }
-        .card-highlight:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -8px rgba(98, 95, 255, 0.25);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Únete a Niuro. Empresa tech chilena. Salarios en USD, proceso en 1-7 días. Proyectos reales de IA y tecnología propia.">
+<meta property="og:title" content="Niuro Careers LATAM">
+<meta property="og:description" content="Empresa tech chilena. Salarios en USD, proceso en 1-7 días. Proyectos reales de IA.">
+<title>Niuro Careers LATAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #050F41;
+  --gold: #FFD166;
+  --warm-white: #FAF9F5;
+  --parchment: #E8E6DC;
+  --teal: #0D9488;
+  --text: #1a1a2e;
+  --sub-text: #475569;
+  --slate: #4A5568;
+  --divider: #E0DED4;
+  --dot-red: #FF5F57;
+  --dot-yellow: #FEBC2E;
+  --dot-green: #28C840;
+  --radius-card: 12px;
+  --radius-pill: 100px;
+  --max-w: 800px;
+  --font-heading: 'Host Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--warm-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, a { cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+/* ── Typography ── */
+h1, h2, h3 { font-family: var(--font-heading); color: var(--navy); }
+h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+h2 { font-size: clamp(22px, 4vw, 36px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+
+/* ── Code-syntax headline accents (Brand Book pattern) ── */
+/* Cobalt Wash: #2C4FBF → #3A60D4 → #5A7DE8 */
+.code-tag .bracket { color: #2C4FBF; opacity: 0.7; }
+.code-tag .slash { color: #2C4FBF; opacity: 0.5; }
+.code-brace {
+  background: linear-gradient(135deg, #2C4FBF, #3A60D4, #5A7DE8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Navy → Gold (signature gradient) on parchment */
+.sec-parchment .code-brace {
+  background: linear-gradient(135deg, #050F41, #1A2A5E, #8B7A3A, #FFD166);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Gold Fade on navy sections */
+.sec-navy .code-brace {
+  background: linear-gradient(135deg, #FFD166, #FFBE3D, #F5A623);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sec-navy .code-tag .bracket { color: rgba(255,255,255,0.4); }
+.sec-navy .code-tag .slash { color: rgba(255,255,255,0.3); }
+.sec-parchment .code-tag .bracket { color: var(--navy); opacity: 0.3; }
+.sec-parchment .code-tag .slash { color: var(--navy); opacity: 0.2; }
+h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
+.subtitle { font-size: 17px; color: var(--sub-text); line-height: 1.7; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ── Icons ── */
+.icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.icon svg { width: 20px; height: 20px; }
+.icon-lg svg { width: 24px; height: 24px; }
+.icon-xl svg { width: 28px; height: 28px; }
+
+/* ── Navbar ── */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 249, 245, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--divider);
+  padding: 16px 0;
+}
+.nav .container { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo {
+  display: inline-flex; align-items: center;
+  text-decoration: none;
+}
+.nav-logo img { height: 36px; width: auto; }
+.nav-badge {
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 600;
+  color: var(--navy);
+  background: var(--parchment);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-left: 8px;
+}
+.nav-cta {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 14px; font-weight: 700;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 12px rgba(255,209,102,0.3);
+  transition: all 0.2s ease;
+}
+.nav-cta:hover { box-shadow: 0 4px 20px rgba(255,209,102,0.5); transform: translateY(-1px); }
+
+/* ── Buttons ── */
+.btn-gold {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 16px; font-weight: 700;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 20px rgba(255,209,102,0.35);
+  transition: all 0.25s ease;
+}
+.btn-gold:hover { box-shadow: 0 6px 30px rgba(255,209,102,0.5); transform: translateY(-2px); }
+.btn-text {
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 500;
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.btn-text:hover { color: var(--navy); }
+
+/* ── Sections ── */
+.sec-warm { background: var(--warm-white); }
+.sec-parchment { background: linear-gradient(to bottom, var(--warm-white) 0%, var(--parchment) 80px); }
+.sec-navy {
+  background: var(--navy); color: #fff;
+  position: relative; overflow: hidden;
+}
+.sec-navy::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,209,102,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,209,102,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.sec-navy::after {
+  content: '';
+  display: block;
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 10%, var(--gold) 50%, transparent 90%);
+  opacity: 0.4;
+}
+.sec-navy .container { position: relative; z-index: 1; }
+.sec-navy h2, .sec-navy h3 { color: #fff; }
+.sec-navy .section-label { color: rgba(255,255,255,0.4); }
+.sec-navy .subtitle { color: rgba(255,255,255,0.75); }
+
+/* ── Cards ── */
+.gold-card {
+  background: #ffffff;
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(5,15,65,0.06), 0 4px 16px rgba(5,15,65,0.04);
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.gold-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,209,102,0.15); }
+.navy-card {
+  background: var(--navy);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.navy-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(5,15,65,0.3), 0 0 0 1px rgba(255,209,102,0.15); }
+.navy-card h3 { color: var(--gold); }
+.navy-card p { color: rgba(255,255,255,0.8); }
+.navy-accent-card {
+  background: var(--navy);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.navy-accent-card:hover { box-shadow: 0 12px 32px rgba(5,15,65,0.25); }
+.navy-accent-card h3 { color: var(--gold); }
+.navy-accent-card p { color: rgba(255,255,255,0.8); }
+
+.card-desc { font-size: 15px; color: var(--sub-text); line-height: 1.6; margin-top: 8px; }
+.navy-card .card-desc, .navy-accent-card .card-desc { color: rgba(255,255,255,0.75); }
+
+/* ── Grids ── */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* ── Terminal ── */
+.terminal {
+  background: #0D1117;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.terminal-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.04);
+}
+.terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+.terminal-title {
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-left: 8px;
+}
+.terminal-header {
+  padding: 14px 20px;
+  font-family: var(--font-mono); font-size: 13px; font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px; text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.terminal-item {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.terminal-item:last-child { border-bottom: none; }
+.terminal-item-title {
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+.terminal-item-title strong { color: var(--gold); }
+.terminal-item-desc {
+  font-size: 13px; color: rgba(255,255,255,0.65);
+  margin-top: 2px; line-height: 1.5;
+}
+/* terminal-prefix removed — using inline emojis instead */
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  background: var(--gold); color: var(--navy);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+/* ── Contract banner ── */
+.contract-banner {
+  background: var(--navy);
+  border: 1px solid rgba(255,209,102,0.3);
+  border-radius: var(--radius-card);
+  padding: 16px 24px;
+  display: flex; align-items: center; gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.contract-banner p {
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  color: var(--gold);
+}
+
+/* ── Hero ── */
+.hero {
+  background: var(--warm-white);
+  background-image: radial-gradient(ellipse at 50% 80%, rgba(255,209,102,0.08) 0%, transparent 60%);
+  padding: 80px 0 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(5,15,65,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
+
+/* ── Blinking cursor ── */
+.cursor-blink {
+  color: #3A60D4;
+  animation: blink 1.2s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+  color: var(--navy); background: var(--gold);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+}
+.hero .subtitle { max-width: 560px; margin: 0 auto 40px; }
+.hero-actions { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+
+/* ── Step Cards (horizontal metric style) ── */
+.step-card {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.step-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD166, #FFBE3D, #F5A623);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(5,15,65,0.12); }
+.step-card:hover::before { opacity: 1; }
+.step-card.step-active {
+  background: var(--navy); border-color: var(--navy);
+  box-shadow: 0 8px 24px rgba(5,15,65,0.25);
+}
+.step-card.step-active .step-emoji { background: rgba(255,209,102,0.15); }
+.step-card.step-active .step-num { color: var(--gold); opacity: 0.4; }
+.step-card.step-active .step-title { color: #fff; }
+.step-card.step-active .step-desc { color: rgba(255,255,255,0.7); }
+.step-emoji {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(255,209,102,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 12px;
+}
+.step-num {
+  font-family: var(--font-mono); font-size: 32px; font-weight: 700;
+  color: var(--navy); line-height: 1; margin-bottom: 8px;
+  opacity: 0.2;
+}
+.step-title { font-size: 15px; font-weight: 700; color: var(--navy); font-family: var(--font-heading); }
+.step-desc { font-size: 13px; color: var(--sub-text); margin-top: 6px; line-height: 1.5; }
+
+/* ── Testimonial ── */
+.testimonial-pull {
+  font-family: var(--font-heading); font-style: italic;
+  font-size: clamp(22px, 3.5vw, 30px); font-weight: 700;
+  color: var(--navy); line-height: 1.35;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+  padding-left: 20px;
+  border-left: 3px solid var(--gold);
+}
+.testimonial-pull span { color: var(--gold); }
+.testimonial-check {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 500; color: var(--teal);
+}
+.testimonial-check svg { color: var(--gold); }
+.testimonial-card {
+  background: var(--warm-white);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-card);
+  padding: 32px;
+}
+.testimonial-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.testimonial-photo {
+  width: 56px; height: 56px; border-radius: 50%;
+  object-fit: cover; border: 3px solid var(--gold);
+}
+.testimonial-name { font-family: var(--font-heading); font-size: 17px; font-weight: 700; color: var(--navy); }
+.testimonial-role { font-size: 13px; color: var(--sub-text); }
+.testimonial-quote {
+  font-style: italic; font-size: 16px;
+  color: var(--sub-text); line-height: 1.7;
+  border-top: 1px solid var(--divider);
+  padding-top: 20px;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--divider);
+  text-align: center;
+}
+.footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+.footer-links a { color: var(--navy); display: inline-flex; align-items: center; transition: opacity 0.2s; }
+.footer-links a:hover { opacity: 0.6; }
+.footer-copy { font-size: 13px; color: var(--slate); }
+
+/* ── Animations ── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Staggered grid children */
+.reveal .grid-3 > *,
+.reveal .grid-2 > *,
+.reveal .grid-4 > * {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible .grid-3 > *,
+.reveal.visible .grid-2 > *,
+.reveal.visible .grid-4 > * {
+  opacity: 1; transform: translateY(0);
+}
+.reveal.visible .grid-3 > *:nth-child(1),
+.reveal.visible .grid-2 > *:nth-child(1),
+.reveal.visible .grid-4 > *:nth-child(1) { transition-delay: 0s; }
+.reveal.visible .grid-3 > *:nth-child(2),
+.reveal.visible .grid-2 > *:nth-child(2),
+.reveal.visible .grid-4 > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal.visible .grid-3 > *:nth-child(3),
+.reveal.visible .grid-4 > *:nth-child(3) { transition-delay: 0.2s; }
+.reveal.visible .grid-4 > *:nth-child(4) { transition-delay: 0.3s; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .nav-badge { display: none; }
+}
+@media (max-width: 580px) {
+  .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+  .hero { padding: 56px 0 48px; }
+  .hero-actions { flex-direction: column; }
+  .btn-gold { width: 100%; text-align: center; }
+  .step-card .step-num { font-size: 28px; }
+  .testimonial-grid { grid-template-columns: 1fr !important; }
+  .testimonial-layout { grid-template-columns: 1fr !important; }
+  .nav-cta { padding: 8px 16px; font-size: 13px; }
+}
+</style>
 </head>
+<body>
 
-<body class="bg-white text-niuro-text antialiased">
-
-    <!-- Navbar - niuro.io style -->
-    <nav class="w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 py-4 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <svg width="120" height="40" viewBox="0 0 2000 666" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-    <g id="Logo-Niuro" serif:id="Logo Niuro" transform="matrix(4.166667,0,0,1.386098,0,0)">
-        <rect x="0" y="0" width="480" height="480" style="fill:none;"/>
-        <g transform="matrix(1,0,0,3.00604,0,-389.363456)">
-            <path d="M447.45,245.893C417.168,267.676 382.82,236.558 399.968,206.576C411.693,186.076 456.515,185.573 457.659,223.765C458.038,236.412 448.903,244.592 447.45,245.893L412.409,210.048C398.222,228.489 420.123,252.115 437.864,238.556C450.528,228.876 446.536,203.636 426.261,203.282C418.224,203.142 413.203,209.105 412.409,210.048L447.45,245.893Z" style="fill:rgb(20,18,65);"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-426.782638)">
-            <path d="M228.495,219.371C220.483,211.921 210.8,215.29 206.254,221.692C202.485,226.998 205.176,258.895 203.872,263.07C203.078,265.615 192.957,264.681 192.235,263.845C191.068,262.494 191.15,225.198 191.52,223.944C198.553,200.082 226.171,203.11 235.421,210.325C246.644,219.076 245.073,225.859 245.216,261.896C245.228,265.05 241.406,264.916 235.27,264.618C233.153,264.516 233.088,264.057 233.044,261.902C232.448,232.805 234.701,226.169 228.495,219.371Z" style="fill:rgb(20,18,65);"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-391.15205)">
-            <path d="M337.546,247.495C319.553,260.577 293.457,252.25 292.784,229.505C292.702,226.739 291.807,196.495 293.074,194.916C293.658,194.188 303.806,193.267 304.802,195.689C305.402,197.15 304.501,231.624 305.83,234.765C306.438,236.203 311.485,246.083 323.576,242.891C332.108,240.638 332.915,233.728 333.044,232.618C334.678,218.621 332.551,195.232 334.748,194.378C334.874,194.329 344.852,193.413 345.725,194.867C345.91,195.173 346.787,230.699 344.733,236.568C344.387,237.555 342.455,243.077 337.546,247.495Z" style="fill:rgb(20,18,65);"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-411.277485)">
-            <path d="M367.148,207.901C367.779,207.38 367.77,207.483 368.367,206.991C368.642,206.764 368.544,206.751 368.827,206.516C375.063,201.362 386.293,200.536 387.213,201.322C388.101,202.081 388.038,207.893 388.032,208.468C387.994,211.934 386.519,210.973 383.212,211.863C382.59,212.03 378.318,213.18 376.262,215.928C371.332,222.52 374.408,249.402 373.567,257.73C373.337,260.003 366.394,259.584 363.635,259.462C360.357,259.318 361.378,253.061 361.399,249.55C361.604,216.649 360.682,215.738 367.148,207.901Z" style="fill:rgb(20,18,65);"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-410.216353)">
-            <path d="M271.206,200.411C273.624,200.82 274.566,199.832 274.911,202.015C274.926,202.108 274.926,209.522 274.926,210.175C274.925,256.808 274.956,256.829 274.753,257.532C273.939,260.354 263.87,259.13 263.244,258.221C262.334,256.902 262.993,202.149 263.033,201.977C263.465,200.127 269.451,200.466 271.206,200.411Z" style="fill:rgb(20,18,65);"/>
-        </g>
-        <g transform="matrix(-1,0,0,3.00604,539.584,-681.866145)">
-            <circle cx="269.792" cy="275.277" r="7.027" style="fill:rgb(21,22,68);stroke:rgb(20,18,65);stroke-width:0.24px;"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-468.088629)">
-            <path d="M40.985,191.995C41.719,191.537 41.693,191.539 42.437,191.09C42.874,190.826 73.939,172.389 73.999,172.356C74.468,172.096 74.585,171.995 79.54,174.383C89.782,179.318 89.801,179.286 89.859,179.291C90.759,179.357 104.559,171.905 105.466,172.182C106.32,172.443 106.276,172.544 115.095,177.831C119.153,180.265 138.636,191.676 139.009,192.069C139.548,192.636 139.295,204.135 139.473,210.06C139.504,211.071 140.194,211.066 145.903,214.28C151.788,217.594 156.717,219.964 156.982,220.695C157.115,221.061 157.193,244.741 157.2,246.832C157.244,259.822 157.272,259.815 157.161,260.103C156.945,260.66 141.258,270.046 140.272,270.761C139.455,271.354 139.699,271.946 139.422,280.625C139.224,286.88 139.631,287.253 138.31,288.039C136.47,289.134 117.838,300.227 115.29,301.686C105.566,307.252 105.482,307.44 104.763,307.168C103.631,306.74 102.065,306.148 91.234,300.422C89.465,299.486 89.369,300.028 87.597,300.941C74.985,307.443 75.01,307.533 74.622,307.53C74.109,307.527 41.139,287.772 41.056,287.694C40.237,286.922 40.794,271.832 40.083,271.095C39.712,270.711 30.489,265.098 29.648,264.586C22.917,260.49 22.83,260.416 22.744,259.747C22.73,259.635 22.949,222.648 22.984,220.991C23.007,219.888 24.378,219.601 31.501,215.6C32.837,214.849 38.788,211.586 39.423,211.238C40.683,210.547 40.34,209.406 40.393,207.071C40.71,193.152 40.471,193.087 40.985,191.995L48.612,269.857C48.049,270.983 48.31,281.24 48.661,282.326C48.98,283.314 49.266,283.123 73.015,297.444C74.446,298.307 74.527,298.773 76.018,297.991C77.635,297.142 79.252,296.293 80.868,295.444C85.27,293.135 85.427,293.074 85.436,292.224C85.475,288.723 85.914,249.182 85.597,248.467C85.053,247.236 75.941,250.629 73.402,246.435C71.067,242.579 73.072,236.161 80.244,238.256C80.954,238.463 85.432,239.325 85.659,238.24C85.682,238.131 85.664,216.812 85.671,187.194C85.671,185.995 85.324,186.023 79.984,183.424C75.397,181.192 75.214,180.997 73.879,181.751C69.88,184.01 49.368,196.184 48.809,196.827C48.171,197.561 48.531,211.42 48.683,211.765C49.281,213.126 55.872,214.188 57.585,216.464C61.402,221.535 54.786,228.306 49.392,223.699C47.748,222.295 42.731,218.885 42.146,218.921C41.966,218.932 31.044,224.735 30.837,225.275C30.729,225.556 30.493,238.214 30.658,238.479C31.256,239.442 36.395,238.119 36.878,237.995C42.721,236.49 46.672,243.851 41.431,247.745C38.42,249.982 30.548,247.037 30.556,248.821C30.583,255.517 30.572,255.616 31.023,255.968C31.31,256.191 39.862,261.667 41.101,262.202C43.454,263.216 50.126,256.703 52.064,256.335C57.935,255.218 61.712,263.325 55.672,266.587C54.83,267.041 52.652,267.49 51.812,267.835C50.051,268.558 50.167,268.72 48.612,269.857L40.985,191.995L122.838,257.944C123.113,257.679 124.982,255.883 127.286,256.226C129.567,256.566 136.42,262.463 137.903,262.509C138.777,262.536 148.867,256.085 149.112,255.742C149.368,255.384 149.441,248.618 149.405,248.528C149.13,247.847 144.241,248.644 141.549,248.563C135.221,248.372 134.841,241.388 138.011,239.009C141.029,236.743 144.344,238.349 144.572,238.42C145.787,238.797 149.099,238.935 149.363,238.466C149.473,238.269 149.333,225.624 149.123,225.325C148.655,224.656 148.533,224.774 140.282,220.226C138.423,219.201 138.321,218.445 136.504,219.539C129.742,223.611 130.291,224.705 127.974,225.027C122.453,225.795 120.882,221.538 121.322,218.999C122.253,213.637 125.584,215.527 130.54,212.258C131.438,211.665 131.179,211.406 131.065,200.445C131.036,197.652 131.938,197.019 129.536,195.624C124.544,192.725 105.399,181.283 105.114,181.201C104.374,180.989 94.591,185.844 94.455,186.177C94.273,186.62 94.347,219.323 94.347,226.291C94.347,238.34 94.252,238.667 94.854,238.733C98.618,239.144 101.775,236.846 104.389,238.318C107.07,239.827 107.601,241.56 107.297,244.168C107.053,246.255 104.576,248.51 103.78,248.503C94.82,248.423 94.391,248.061 94.321,248.834C94.273,249.36 94.516,282.657 94.538,285.598C94.589,292.674 94.327,293.007 95.467,293.605C102.105,297.088 104.667,298.61 105.728,298.099C106.152,297.895 130.14,283.646 130.641,283.308C131.061,283.024 131.062,282.925 131.12,276.982C131.19,269.955 131.346,269.86 130.899,269.418C129.427,267.966 126.418,267.366 125.998,267.282C122.385,266.561 119.149,261.981 122.838,257.944L40.985,191.995Z" style="fill:rgb(255,208,103);"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-463.01744)">
-            <path d="M61.881,195.617C65.817,192.042 69.752,195.226 70.621,197.445C71.235,199.014 70.903,199.318 73.507,201.237C75.52,202.722 75.186,203.022 75.196,204.393C75.208,206.008 75.339,223.971 75.208,224.585C75.025,225.438 64.025,232.933 63.691,233.551C63.358,234.166 63.575,246.822 63.581,246.84C63.804,247.575 74.103,251.94 74.884,252.529C75.316,252.855 75.252,252.982 75.252,266.02C75.252,274.772 75.416,274.945 74.499,275.831C69.215,280.942 70.664,282.761 66.96,283.757C59.705,285.709 57.444,274.879 64.339,273.254C66.294,272.794 66.816,272.721 66.967,269.332C67.062,267.194 67.026,258.174 67.007,258.067C66.782,256.829 55.977,252.917 55.551,251.735C55.51,251.62 55.261,230.393 55.279,230.225C55.369,229.396 55.587,229.432 63.461,223.75C66.614,221.475 66.956,221.519 66.967,219.965C67.064,206.594 66.94,206.458 66.253,205.812C65.5,205.105 60.608,204.192 60.311,200.754C59.974,196.841 61.14,196.289 61.881,195.617Z" style="fill:rgb(255,208,103);"/>
-        </g>
-        <g transform="matrix(1,0,0,3.00604,0,-455.884108)">
-            <path d="M107.244,198.209C108.695,196.711 108.509,196.596 109.458,194.756C111.059,191.652 115.336,190.799 117.644,192.802C122.387,196.918 118.276,201.954 116.07,202.473C115.772,202.543 113.349,203.113 112.718,204.334C112.412,204.927 112.594,218.185 112.626,218.289C112.837,218.969 123.295,226.176 123.971,226.888C124.321,227.256 124.273,227.34 124.273,243.767C124.273,249.267 124.557,249.636 123.268,250.268C113.428,255.093 112.826,254.766 112.789,256.029C112.381,269.843 112.743,270.48 114.369,270.697C114.945,270.774 119.232,271.347 119.764,275.56C120.476,281.189 112.223,284.579 109.207,278.17C107.552,274.652 105.68,273.987 104.923,272.823C104.604,272.331 104.733,250.7 104.851,250.433C105.156,249.738 115.733,245.282 116.287,244.691C116.771,244.175 116.499,232.863 116.475,231.834C116.464,231.375 116.474,231.276 112.961,228.654C105.411,223.02 104.806,222.875 104.756,221.9C104.754,221.869 104.752,200.953 104.758,200.693C104.779,199.794 105.158,200.008 107.244,198.209Z" style="fill:rgb(255,208,103);"/>
-        </g>
-    </g>
-</svg>
-                <span class="text-sm font-semibold text-niuro-sub bg-gray-100 px-3 py-1 rounded-full font-body">Careers</span>
-            </div>
-            <a href="https://app.niuro.io/" class="hidden md:inline-block bg-niuro-yellow hover:bg-amber-400 text-niuro-dark font-bold py-2.5 px-6 rounded-full text-sm transition-all hover:scale-105 shadow-lg font-body">
-                Únete Ahora
-            </a>
-        </div>
-    </nav>
-
-    <!-- 1. HERO - niuro.io style -->
-    <header class="bg-white pt-24 pb-20 px-6 border-b border-gray-200">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 bg-amber-50 text-niuro-orange px-5 py-2 rounded-full text-sm font-bold mb-8 shadow-sm font-body">
-                <span class="text-lg">🚀</span>
-                Hiring: Engineers, Data & Product
-            </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold font-heading text-niuro-dark tracking-tight mb-6 leading-tight">
-                Tu carrera, al<br>siguiente nivel <span class="gradient-text">AI-Native.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-niuro-sub max-w-2xl mx-auto leading-relaxed mb-10 font-medium font-body">
-                Empresa tech chilena. Salarios en <strong>USD</strong>, proceso en <strong>1-7 días</strong>. Proyectos reales de IA y tecnología propia.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://app.niuro.io/applications" class="bg-niuro-primary hover:bg-niuro-secondary text-white font-bold py-4 px-10 rounded-full text-lg transition-all hover:scale-105 shadow-xl font-body flex items-center justify-center gap-2">
-                    <span>💼</span> Ver Oportunidades
-                </a>
-                <a href="https://www.instagram.com/niuro.io/" target="_blank" class="bg-white border-2 border-gray-300 hover:border-niuro-yellow hover:text-niuro-orange text-niuro-text font-semibold py-4 px-10 rounded-full text-lg transition-all font-body flex items-center justify-center gap-2">
-                    <span>📸</span> Conoce la Cultura
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. QUÉ ES NIURO -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-gray-50 p-10 rounded-3xl border border-gray-200">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-3xl">🎯</span>
-                    <h2 class="text-2xl font-bold font-heading text-niuro-dark">¿Qué es Niuro?</h2>
-                </div>
-                <p class="text-lg text-niuro-text leading-relaxed font-body">
-                    Empresa tech chilena. Construimos <strong>productos de IA</strong> que resuelven cuellos de botella operacionales reales: ATS, AI Interviewer, AI Recruiter, automatización de workflows con lenguaje natural, entre otros. También hacemos <strong>consulting y staff augmentation</strong> para empresas en <strong>EE.UU., Canadá y Latinoamérica</strong>. Cuando entras a Niuro, trabajas en proyectos de clientes o en nuestra propia tecnología. Siempre estás construyendo.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. ERES PARTE DE NIURO -->
-    <section class="py-16 px-6 bg-niuro-dark text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 bg-niuro-yellow/20 text-niuro-yellow px-4 py-2 rounded-full text-sm font-bold mb-8 font-body">
-                <span>✨</span> Importante
-            </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold font-heading mb-6 leading-tight">
-                Si entras, eres parte de Niuro
-            </h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12 font-body">
-                Eres parte de la empresa trabajes donde trabajes. Beneficios, comunidad, crecimiento. Ramp-ups, workshops, mentorías y acceso a las mejores herramientas <strong>siempre</strong>, no solo entre proyectos. Buddy asignado desde el día 1. Ingenieros senior disponibles cuando los necesites, sin importar tu proyecto. Si un proyecto de cliente termina, te sumas a tech interna mientras se define tu próximo proyecto.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div class="card-highlight bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20">
-                    <span class="text-3xl mb-3 block">🤝</span>
-                    <p class="font-semibold text-lg font-body">Buddy desde el día 1</p>
-                </div>
-                <div class="card-highlight bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20">
-                    <span class="text-3xl mb-3 block">🛠️</span>
-                    <p class="font-semibold text-lg font-body">Herramientas y formación siempre</p>
-                </div>
-                <div class="card-highlight bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20">
-                    <span class="text-3xl mb-3 block">🔄</span>
-                    <p class="font-semibold text-lg font-body">Tech interna entre proyectos</p>
-                </div>
-            </div>
-            <!-- Modalidad Contractor aquí -->
-            <div class="bg-niuro-yellow/10 backdrop-blur p-5 rounded-2xl border border-niuro-yellow/30">
-                <div class="flex items-center gap-3 justify-center">
-                    <span class="text-2xl">💻</span>
-                    <p class="font-semibold text-niuro-yellow font-body"><strong>Contractor vía DEEL</strong> • 100% remoto • Full time, part time o freelance según el cliente</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. POR QUÉ NIURO -->
-    <section id="culture" class="py-16 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 bg-niuro-primary/10 text-niuro-primary px-4 py-2 rounded-full text-sm font-bold mb-4 font-body">
-                    <span>⚡</span> Por qué elegirnos
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold font-heading text-niuro-dark mb-4">Trabajar aquí es distinto</h2>
-                <p class="text-lg text-niuro-sub max-w-2xl mx-auto font-body">No es solo código. Es ownership, excelencia y comunidad.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Box 1 -->
-                <div class="card-highlight bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-sm">
-                    <div class="w-14 h-14 bg-niuro-primary/10 rounded-2xl flex items-center justify-center text-niuro-primary mb-6">
-                        <span class="text-3xl">👥</span>
-                    </div>
-                    <h3 class="text-xl font-bold font-heading text-niuro-dark mb-3">Creado por Ingenieros, para Ingenieros</h3>
-                    <p class="text-niuro-sub leading-relaxed font-body"><strong>Acceso a colegas</strong> trabajando en proyectos similares. Cuando necesitas ayuda, hay expertos de Niuro dispuestos a orientarte.</p>
-                </div>
-                <!-- Box 2 -->
-                <div class="card-highlight bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-sm">
-                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-6">
-                        <span class="text-3xl">⚡</span>
-                    </div>
-                    <h3 class="text-xl font-bold font-heading text-niuro-dark mb-3">Proceso Flash</h3>
-                    <p class="text-niuro-sub leading-relaxed font-body">Contratación en <strong>1 a 7 días</strong>. Sin burocracia ni esperas de meses. Si te registras, quedas calificado para futuras oportunidades.</p>
-                </div>
-                <!-- Box 3 -->
-                <div class="card-highlight bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-sm">
-                    <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-niuro-orange mb-6">
-                        <span class="text-3xl">🕐</span>
-                    </div>
-                    <h3 class="text-xl font-bold font-heading text-niuro-dark mb-3">Flexibilidad + Responsabilidad</h3>
-                    <p class="text-niuro-sub leading-relaxed font-body">Ritmo de startup. <strong>Flexibilidad horaria desde el día 1</strong>. Cómo organizas tu tiempo es tu problema; entregar con excelencia es tu responsabilidad.</p>
-                </div>
-            </div>
-            <!-- Mindset Box -->
-            <div class="mt-8 bg-white p-8 rounded-2xl border-2 border-niuro-primary/30 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-14 h-14 bg-niuro-primary/10 rounded-2xl flex items-center justify-center text-niuro-primary">
-                        <span class="text-3xl">🧠</span>
-                    </div>
-                    <h3 class="text-xl font-bold font-heading text-niuro-dark">Mindset</h3>
-                </div>
-                <p class="text-niuro-sub leading-relaxed font-body">Aquí eres dueño de lo que haces. Si un agente de IA escribe el código, <strong>tú eres responsable</strong> de que funcione, escale y esté bien pensado. La IA es una herramienta, el ownership es tuyo. Se trata de querer que las cosas funcionen, crecer y hacer crecer a los que te rodean.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. TESTIMONIAL -->
-    <section class="py-16 px-6 bg-niuro-dark text-white">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <div class="inline-flex items-center gap-2 bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-green-500/30 font-body">
-                    <span>💬</span> Testimonio Real
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-5 leading-tight">
-                    Nunca serás un "recurso externo".<br><span class="text-niuro-yellow">Eres parte de Niuro.</span>
-                </h2>
-                <p class="text-lg text-gray-300 mb-8 leading-relaxed font-body">
-                    Lo más valioso: <strong>poder pedir ayuda a colegas</strong> aunque no estén en tu mismo proyecto.
-                </p>
-                <div class="space-y-4 mb-8">
-                    <div class="bg-white/5 p-5 rounded-xl">
-                        <p class="text-gray-200 font-body leading-relaxed">Tienes acceso a colegas e ingenieros senior en todos los proyectos. Cuando te trabas, siempre hay alguien disponible para ayudarte.</p>
-                    </div>
-                    <div class="bg-niuro-yellow/10 p-5 rounded-xl border border-niuro-yellow/30">
-                        <div class="flex items-start gap-3">
-                            <span class="bg-niuro-yellow/20 text-niuro-yellow w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">✓</span>
-                            <span class="text-gray-200 font-body"><strong>Buddy System:</strong> Partner asignado desde el día 1.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="md:w-1/2 bg-white/5 p-8 rounded-3xl border border-white/20 shadow-2xl backdrop-blur">
-                <div class="flex items-center gap-4 mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 rounded-full flex-shrink-0 border-4 border-white/20" viewBox="0 0 64 64"><defs><clipPath id="paula-clip"><circle cx="32" cy="32" r="32"/></clipPath></defs><image href="photos/paula-jorquera.jpeg" width="64" height="64" clip-path="url(#paula-clip)" preserveAspectRatio="xMidYMid slice"/></svg>
-                    <div>
-                        <p class="font-bold text-xl font-heading">Paula Jorquera</p>
-                        <p class="text-gray-400 font-body">Team Lead • Santiago, Chile</p>
-                    </div>
-                </div>
-                <div class="border-t-2 border-white/20 pt-6">
-                    <p class="italic text-xl text-gray-200 leading-relaxed font-body">"Tuve un desafío técnico complejo en mi proyecto y colegas de Niuro me orientaron para resolverlo. Así entendí mejor algo que era nuevo para mí. Poder echar mano a la empresa es lo que más se siente como estar en una comunidad."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. BENEFICIOS -->
-    <section class="py-16 px-6 bg-white border-y border-gray-200">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 bg-niuro-yellow/20 text-niuro-orange px-4 py-2 rounded-full text-sm font-bold mb-4 font-body">
-                    <span>🎁</span> Beneficios
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold font-heading text-niuro-dark mb-4">Beneficios que importan</h2>
-                <p class="text-lg text-niuro-sub max-w-2xl mx-auto font-body">Proyectos <strong>impactantes y técnicamente rigurosos</strong> que impulsan tu carrera.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Columna 1 -->
-                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                    <h3 class="text-xl font-bold font-heading text-niuro-primary mb-6 flex items-center gap-3">
-                        <span class="text-2xl">💪</span>
-                        Perks & Bienestar
-                    </h3>
-                    <ul class="space-y-5">
-                        
-<li class="flex items-start gap-3">
-    <span class="text-xl">💻</span>
-    <div>
-        <strong class="block text-niuro-dark font-heading">Hardware último modelo</strong>
-        <span class="text-sm text-niuro-sub">¿Sin equipo? Te lo damos con opción de compra con descuento.</span>
+<!-- ═══ NAVBAR ═══ -->
+<nav class="nav">
+  <div class="container">
+    <div style="display:flex;align-items:center;">
+      <a href="https://app.niuro.io/" class="nav-logo"><img src="logos/logo_niuro_negro.svg" alt="Niuro"></a>
+      <span class="nav-badge">careers</span>
     </div>
-</li>
-<li class="flex items-start gap-3">
-    <span class="text-xl">💰</span>
-    <div>
-        <strong class="block text-niuro-dark font-heading">Bonos por desempeño</strong>
-        <span class="text-sm text-niuro-sub">Basados en objetivos claros.</span>
-    </div>
-</li>
-<li class="flex items-start gap-3">
-    <span class="text-xl">📅</span>
-    <div>
-        <strong class="block text-niuro-dark font-heading">Vacaciones</strong>
-        <span class="text-sm text-niuro-sub">2 semanas al cumplir 1 año en Niuro.</span>
-    </div>
-</li>
-                    </ul>
-                </div>
-                <!-- Columna 2 -->
-                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                    <h3 class="text-xl font-bold font-heading text-niuro-primary mb-6 flex items-center gap-3">
-                        <span class="text-2xl">📈</span>
-                        Crecimiento Profesional
-                    </h3>
-                    <ul class="space-y-5">
-                        
-<li class="flex items-start gap-3">
-    <span class="text-xl">🎓</span>
-    <div>
-        <strong class="block text-niuro-dark font-heading">Formación continua</strong>
-        <span class="text-sm text-niuro-sub">Cursos y capacitaciones alineados con tu proyecto actual.</span>
-    </div>
-</li>
-<li class="flex items-start gap-3">
-    <span class="text-xl">👥</span>
-    <div>
-        <strong class="block text-niuro-dark font-heading">Comunidad activa</strong>
-        <span class="text-sm text-niuro-sub">Reuniones técnicas, Slack y acceso a expertos.</span>
-    </div>
-</li>
-<li class="flex items-start gap-3">
-    <span class="text-xl">🚀</span>
-    <div>
-        <strong class="block text-niuro-dark font-heading">Camino a x10 Engineer</strong>
-        <span class="text-sm text-niuro-sub">Multiplica tu impacto con AI, ownership real sobre productos y mentoría entre pares.</span>
-    </div>
-</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <a href="https://app.niuro.io/" class="nav-cta">Únete Ahora</a>
+  </div>
+</nav>
 
-    <!-- 7. PERFILES Y PROCESO -->
-    <section class="py-16 px-6 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <!-- Qué Buscamos -->
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold font-heading text-niuro-dark text-center mb-8">¿Eres quién buscamos?</h2>
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-200">
-                    <div class="flex flex-wrap gap-3 justify-center mb-8">
-                        
-<span class="bg-niuro-primary/10 text-niuro-primary px-4 py-2 rounded-full text-sm font-semibold font-body">Curiosidad Intelectual</span>
-<span class="bg-niuro-primary/10 text-niuro-primary px-4 py-2 rounded-full text-sm font-semibold font-body">AI-Native con experiencia</span>
-<span class="bg-niuro-primary/10 text-niuro-primary px-4 py-2 rounded-full text-sm font-semibold font-body">Responsabilidad</span>
-<span class="bg-niuro-primary/10 text-niuro-primary px-4 py-2 rounded-full text-sm font-semibold font-body">Inglés conversacional</span>
-<span class="bg-niuro-primary/10 text-niuro-primary px-4 py-2 rounded-full text-sm font-semibold font-body">Colaboración</span>
-                    </div>
-                    <p class="text-center text-lg text-niuro-sub leading-relaxed font-body">Buscamos <strong>Engineers: Frontend, Backend, Fullstack</strong>. <strong>Data Engineers, Data Scientists. QA. UX/UI. Product Managers.</strong></p>
-                    <p class="text-center text-sm text-niuro-primary mt-4 font-body font-semibold">Si tu perfil no está en la lista pero crees que deberías estar aquí, <a href="mailto:hiring@niuro.io" class="text-niuro-primary underline">escríbenos</a>.</p>
-                </div>
-            </div>
-            
-            <!-- Proceso Timeline -->
-            <div>
-                <div class="text-center mb-10">
-                    <div class="inline-flex items-center gap-2 bg-niuro-yellow/30 text-niuro-orange px-4 py-2 rounded-full text-sm font-bold mb-4 font-body">
-                        <span>⏱️</span> Rápido
-                    </div>
-                    <h2 class="text-2xl md:text-3xl font-bold font-heading text-niuro-dark">Proceso en 1-7 días</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <!-- Step 1 -->
-                    <div class="card-highlight bg-white p-6 rounded-2xl border-2 border-gray-200 text-center">
-                        <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl text-niuro-sub">1</div>
-                        <h4 class="font-bold font-heading text-niuro-dark mb-2">Screening</h4>
-                        <p class="text-sm text-niuro-sub font-body">Validación de perfil. Call con alguien del equipo.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="card-highlight bg-white p-6 rounded-2xl border-2 border-gray-200 text-center">
-                        <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl text-niuro-sub">2</div>
-                        <h4 class="font-bold font-heading text-niuro-dark mb-2">Cultural Fit</h4>
-                        <p class="text-sm text-niuro-sub font-body">En vivo o async con AI Interviewer, tú eliges.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="card-highlight bg-white p-6 rounded-2xl border-2 border-gray-200 text-center">
-                        <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl text-niuro-sub">3</div>
-                        <h4 class="font-bold font-heading text-niuro-dark mb-2">Tech Challenge</h4>
-                        <p class="text-sm text-niuro-sub font-body">Entrevista técnica. En vivo o async con AI Interviewer, tú eliges.</p>
-                    </div>
-                    <!-- Step 4 -->
-                    <div class="card-highlight bg-niuro-primary p-6 rounded-2xl text-center shadow-lg text-white">
-                        <div class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">4</div>
-                        <h4 class="font-bold font-heading mb-2">Client Interview</h4>
-                        <p class="text-sm text-blue-100 font-body">Coaching previo + entrevista final. Siempre en vivo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main>
 
-    <!-- 8. CTA / FOOTER -->
-    <footer id="apply" class="bg-white py-24 px-6 border-t border-gray-200 text-center">
-        <div class="max-w-3xl mx-auto">
-            <div class="inline-flex items-center gap-2 bg-niuro-yellow/30 text-niuro-orange px-4 py-2 rounded-full text-sm font-bold mb-6 font-body">
-                <span>🎯</span> Únete
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold font-heading text-niuro-dark mb-6 leading-tight">
-                ¿Listo para codear el futuro?
-            </h2>
-            <p class="text-xl text-niuro-sub mb-10 leading-relaxed font-body">
-                Si quieres trabajar en <strong>IA con proyectos reales</strong> y crecer aceleradamente, este es tu lugar.
-            </p>
-            <a href="https://app.niuro.io/" class="inline-block bg-niuro-yellow hover:bg-amber-400 text-niuro-dark font-bold py-5 px-14 rounded-full text-xl transition-all hover:scale-105 shadow-2xl font-body">
-                Regístrate en Niuro 🚀
-            </a>
-            <p class="text-sm text-niuro-sub mt-6 font-body">
-                ¿Dudas? Escríbenos a <a href="mailto:hiring@niuro.io" class="text-niuro-primary underline font-semibold">hiring@niuro.io</a>
-            </p>
-            <div class="mt-16 text-gray-400 text-sm font-body">
-                &copy; 2026 Niuro. Hecho con 💙 por y para Engineers.
-            </div>
+<!-- ═══ 1. HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      🚀 Hiring: Engineers, Data &amp; Product
+    </div>
+    <h1><span class="code-tag"><span class="bracket">&lt;</span>Tu Carrera<span class="slash">/</span><span class="bracket">&gt;</span></span> al<br>siguiente nivel <span class="code-brace">{AI-Native}</span><span class="cursor-blink">_</span></h1>
+    <p class="subtitle" style="margin-top:20px;">Empresa tech chilena. Salarios en <strong>USD</strong>, proceso en <strong>1-7 días</strong>. Proyectos reales de IA y tecnología propia.</p>
+    <div style="display:flex;justify-content:center;gap:40px;margin:32px 0 40px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <p style="font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--navy);line-height:1;">90%+</p>
+        <p style="font-size:12px;color:var(--sub-text);margin-top:4px;font-weight:500;">Match rate</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--navy);line-height:1;">48h</p>
+        <p style="font-size:12px;color:var(--sub-text);margin-top:4px;font-weight:500;">Deploy time</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--navy);line-height:1;">97%</p>
+        <p style="font-size:12px;color:var(--sub-text);margin-top:4px;font-weight:500;">Retention</p>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="https://app.niuro.io/applications" class="btn-gold">Ver Oportunidades</a>
+      <a href="https://www.instagram.com/niuro.io/" target="_blank" class="btn-text">Conoce la Cultura →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. QUÉ ES NIURO ═══ -->
+<section class="sec-parchment reveal" style="padding:48px 0;">
+  <div class="container">
+    <span class="section-label">// about_niuro</span>
+    <h2 style="margin-bottom:16px;">Somos una empresa <span class="code-brace">{tech}</span> chilena</h2>
+    <div class="gold-card">
+      <p style="font-size:16px;line-height:1.7;">Construimos <strong>productos de IA</strong> que resuelven cuellos de botella operacionales reales: ATS, AI Interviewer, AI Recruiter, automatización de workflows con lenguaje natural, entre otros. También hacemos <strong>consulting y staff augmentation</strong> para empresas en <strong>EE.UU., Canadá y Latinoamérica</strong>. Cuando entras a Niuro, trabajas en proyectos de clientes o en nuestra propia tecnología. Siempre estás construyendo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. ECOSISTEMA NIURO ═══ -->
+<section class="sec-warm reveal" style="padding:72px 0;">
+  <div class="container">
+    <span class="section-label">// ecosystem</span>
+    <h2>Si colaboras con nosotros, accedes al <span class="code-brace">{ecosistema}</span> de Niuro</h2>
+    <p class="subtitle" style="margin:12px 0 32px;">Eres parte de la empresa trabajes donde trabajes. <strong>Beneficios, comunidad, crecimiento.</strong> Ramp-ups, workshops, mentorías y acceso a las mejores <strong>herramientas y recursos de capacitación siempre</strong>. Buddy asignado desde el día 1. <strong>Ingenieros senior disponibles</strong> cuando los necesites, sin importar tu proyecto. Si un proyecto de cliente termina, te sumas a <strong>proyectos internos</strong> mientras se define tu próximo proyecto.</p>
+
+    <div class="grid-3">
+      <div class="navy-card">
+        <div class="icon icon-lg" style="color:var(--gold);margin-bottom:12px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-    </footer>
+        <h3 style="color:var(--gold);">Buddy desde el día 1</h3>
+        <p class="card-desc">Un partner para tu proceso de incorporación.</p>
+      </div>
+      <div class="navy-card">
+        <div class="icon icon-lg" style="color:var(--gold);margin-bottom:12px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 style="color:var(--gold);">Acceso a herramientas y capacitación</h3>
+        <p class="card-desc">Cursos, certificaciones y mentoría continua.</p>
+      </div>
+      <div class="navy-card">
+        <div class="icon icon-lg" style="color:var(--gold);margin-bottom:12px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg>
+        </div>
+        <h3 style="color:var(--gold);">Acceso a proyectos internos</h3>
+        <p class="card-desc">Sigues construyendo entre asignaciones de clientes.</p>
+      </div>
+    </div>
+
+    <div class="contract-banner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+      <p>Contractor vía DEEL · 100% remoto · Full time, part time o freelance según el cliente</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. POR QUÉ NIURO ═══ -->
+<section class="sec-parchment reveal" style="padding:72px 0;">
+  <div class="container">
+    <span class="section-label">// what_makes_us_different</span>
+    <h2 style="margin-bottom:8px;">Trabajar aquí es <span class="code-brace">{distinto}</span></h2>
+    <p class="subtitle" style="margin-bottom:32px;">No es solo código. Es ownership, excelencia y comunidad.</p>
+
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="gold-card" style="display:flex;gap:16px;align-items:flex-start;">
+        <div class="icon icon-xl" style="color:var(--navy);opacity:0.6;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h3>Creado por Ingenieros, para Ingenieros</h3>
+          <p class="card-desc">Acceso a colegas trabajando en proyectos similares. Cuando necesitas ayuda, hay expertos de Niuro dispuestos a orientarte.</p>
+        </div>
+      </div>
+      <div class="gold-card" style="display:flex;gap:16px;align-items:flex-start;">
+        <div class="icon icon-xl" style="color:var(--navy);opacity:0.6;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div>
+          <h3>Proceso Flash</h3>
+          <p class="card-desc">Proceso en <strong>1 a 7 días</strong>. Sin burocracia ni esperas de meses. Si te registras, quedas calificado para futuras oportunidades.</p>
+        </div>
+      </div>
+      <div class="gold-card" style="display:flex;gap:16px;align-items:flex-start;">
+        <div class="icon icon-xl" style="color:var(--navy);opacity:0.6;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h3>Flexibilidad + Responsabilidad</h3>
+          <p class="card-desc">Ritmo de startup. <strong>Flexibilidad horaria desde el día 1</strong>. Cómo organizas tu tiempo es tu problema; entregar con excelencia es tu responsabilidad.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mindset -->
+    <div class="navy-accent-card" style="margin-top:20px;display:flex;gap:16px;align-items:flex-start;">
+      <div class="icon icon-xl" style="color:var(--gold);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      </div>
+      <div>
+        <h3 style="color:var(--gold);">Mindset</h3>
+        <p class="card-desc">Aquí eres dueño de lo que haces. Si un agente de IA escribe el código, <strong style="color:#fff;">tú eres responsable</strong> de que funcione, escale y esté bien pensado. <strong style="color:#fff;">La IA es una herramienta, el ownership es tuyo.</strong> Se trata de querer que las cosas funcionen, <strong style="color:#fff;">crecer y hacer crecer</strong> a los que te rodean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. TESTIMONIAL ═══ -->
+<section class="sec-parchment reveal" style="padding:72px 0;">
+  <div class="container">
+    <span class="section-label">// from_the_team</span>
+
+    <p class="testimonial-pull">Nunca serás un "recurso externo". <span style="background:linear-gradient(135deg, #050F41, #1A2A5E, #8B7A3A, #FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Accedes al ecosistema Niuro.</span></p>
+
+    <div class="testimonial-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <!-- Left: context -->
+      <div>
+        <p style="font-size:17px;color:var(--sub-text);line-height:1.7;">Lo más valioso: <strong style="color:var(--navy);">poder pedir ayuda a colegas</strong> aunque no estén en tu mismo proyecto.</p>
+        <p style="margin-top:16px;font-size:15px;color:var(--sub-text);line-height:1.7;">Tienes acceso a colegas e ingenieros senior en todos los proyectos. Cuando te trabas, <strong style="color:var(--navy);">siempre hay alguien disponible</strong> para ayudarte.</p>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--navy);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Buddy asignado para tu incorporación.
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--navy);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Ingenieros senior disponibles en cualquier proyecto.
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--navy);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Comunidad técnica, workshops y mentorías.
+          </div>
+        </div>
+      </div>
+      <!-- Right: testimonial card -->
+      <div style="background:var(--navy);border-radius:var(--radius-card);padding:32px;">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+          <img src="photos/paula-jorquera.jpeg" alt="Paula Jorquera" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);">
+          <div>
+            <p style="font-family:var(--font-heading);font-size:17px;font-weight:700;color:#fff;">Paula Jorquera</p>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <p style="font-size:13px;color:rgba(255,255,255,0.5);">Team Lead · Santiago, Chile</p>
+              <span style="display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:10px;font-weight:500;background:rgba(40,200,64,0.12);color:#28C840;padding:3px 8px;border-radius:6px;"><span style="width:5px;height:5px;border-radius:50%;background:#28C840;display:inline-block;"></span>active</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-style:italic;font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">"Tuve un desafío técnico complejo en mi proyecto y colegas de Niuro me orientaron para resolverlo. Así entendí mejor algo que era nuevo para mí. Poder echar mano a la empresa es lo que más se siente como estar en una comunidad."</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ 6. BENEFICIOS (Terminal Cards) ═══ -->
+<section class="sec-navy reveal" style="padding:72px 0;">
+  <div class="container">
+    <span class="section-label">// perks</span>
+    <h2 style="margin-bottom:32px;"><span class="code-tag"><span class="bracket">&lt;</span>Beneficios<span class="slash">/</span><span class="bracket">&gt;</span></span> que importan</h2>
+
+    <div class="grid-2">
+      <!-- Terminal 1: Perks -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot" style="background:var(--dot-red);"></span>
+          <span class="terminal-dot" style="background:var(--dot-yellow);"></span>
+          <span class="terminal-dot" style="background:var(--dot-green);"></span>
+          <span class="terminal-title">perks.md</span>
+        </div>
+        <div class="terminal-header">WHAT YOU GET</div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">💻 <strong>Hardware último modelo</strong></p>
+            <p class="terminal-item-desc">Sin equipo? Te lo damos con opción de compra con descuento.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">💰 <strong>Bonos por desempeño</strong></p>
+            <p class="terminal-item-desc">Basados en objetivos claros.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">📊 <strong>Vacaciones</strong></p>
+            <p class="terminal-item-desc">2 semanas al cumplir 1 año en Niuro.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">🏥 <strong>Salud y Bienestar</strong></p>
+            <p class="terminal-item-desc">Recursos para apoyar tu bienestar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal 2: Growth -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot" style="background:var(--dot-red);"></span>
+          <span class="terminal-dot" style="background:var(--dot-yellow);"></span>
+          <span class="terminal-dot" style="background:var(--dot-green);"></span>
+          <span class="terminal-title">growth.md</span>
+        </div>
+        <div class="terminal-header">LEVEL UP</div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">🎓 <strong>Formación continua</strong></p>
+            <p class="terminal-item-desc">Cursos y capacitaciones alineados con tu proyecto actual.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">👥 <strong>Comunidad activa</strong></p>
+            <p class="terminal-item-desc">Reuniones técnicas, Slack y acceso a expertos.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">🚀 <strong>Camino a x10 Engineer</strong></p>
+            <p class="terminal-item-desc">Multiplica tu impacto con AI, ownership real sobre productos y mentoría entre pares.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. PROCESO ═══ -->
+<section class="sec-parchment reveal" style="padding:72px 0;">
+  <div class="container">
+    <span class="section-label">// how_it_works</span>
+    <h2 style="margin-bottom:16px;">Proceso en <span class="code-tag"><span class="bracket">&lt;</span>1-7 días<span class="slash">/</span><span class="bracket">&gt;</span></span></h2>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 16px;">
+      <span class="tag">Curiosidad Intelectual</span>
+      <span class="tag">AI-Native con experiencia</span>
+      <span class="tag">Responsabilidad</span>
+      <span class="tag">Inglés conversacional</span>
+      <span class="tag">Colaboración</span>
+    </div>
+    <p class="subtitle" style="margin-bottom:32px;">Buscamos <strong>Engineers: Frontend, Backend, Fullstack</strong>. <strong>Data Engineers, Data Scientists. QA. UX/UI. Product Managers.</strong></p>
+
+    <div class="grid-4">
+      <div class="step-card">
+        <div class="step-emoji">📋</div>
+        <p class="step-num">01</p>
+        <p class="step-title">Screening</p>
+        <p class="step-desc">Validación de perfil. Call con alguien del equipo.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-emoji">🤝</div>
+        <p class="step-num">02</p>
+        <p class="step-title">Cultural Fit</p>
+        <p class="step-desc">En vivo o async con AI Interviewer, tú eliges.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-emoji">⚡</div>
+        <p class="step-num">03</p>
+        <p class="step-title">Tech Challenge</p>
+        <p class="step-desc">Entrevista técnica. En vivo o async con AI Interviewer, tú eliges.</p>
+      </div>
+      <div class="step-card step-active">
+        <div class="step-emoji">🎯</div>
+        <p class="step-num">04</p>
+        <p class="step-title">Client Interview</p>
+        <p class="step-desc">Coaching previo + entrevista final. Siempre en vivo.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;font-size:14px;color:var(--sub-text);">Si tu perfil no está en la lista pero crees que deberías estar aquí, <a href="mailto:hiring@niuro.io" style="color:var(--teal);text-decoration:underline;text-underline-offset:3px;">escríbenos</a>.</p>
+  </div>
+</section>
+
+<!-- ═══ 8. CTA ═══ -->
+<section class="sec-navy reveal" style="padding:80px 0;text-align:center;background-image:radial-gradient(circle at 50% 80%, rgba(255,209,102,0.06) 0%, transparent 50%);">
+  <div class="container">
+    <span class="section-label">// apply</span>
+    <h2 style="color:#fff;margin-bottom:16px;">¿Listo para <span class="code-brace">{construir}</span> lo que viene?</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 40px;line-height:1.7;">Si quieres trabajar en <strong style="color:#fff;">IA con proyectos reales</strong> y crecer aceleradamente, este es tu lugar.</p>
+    <a href="https://app.niuro.io/" class="btn-gold" style="font-size:18px;padding:18px 48px;">Regístrate en Niuro</a>
+    <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:20px;">Dudas? <a href="mailto:hiring@niuro.io" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">hiring@niuro.io</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" style="background:var(--warm-white);">
+  <div class="container">
+    <img src="logos/logo_niuro_negro.svg" alt="Niuro" style="height:28px;width:auto;margin:0 auto 16px;">
+    <div style="width:60px;height:2px;background:linear-gradient(90deg,var(--gold),#F5A623);margin:0 auto 16px;border-radius:2px;"></div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/company/niuro/" target="_blank" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.instagram.com/niuro.io/" target="_blank" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://twitter.com/niuro_io" target="_blank" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+    <p class="footer-copy">Hecho por Ingenieros, para Ingenieros. Santiago, Chile.</p>
+    <p class="footer-copy" style="margin-top:4px;">© 2026 Niuro.</p>
+  </div>
+</footer>
+
+<!-- Scroll reveal -->
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){e.classList.add('visible');}); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, {threshold:0.12});
+  els.forEach(function(e){obs.observe(e);});
+})();
+</script>
 
 </body>
 </html>
