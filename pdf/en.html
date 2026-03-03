@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Join Niuro. Chilean tech company. Salaries in USD, 1-7 day process. Real AI projects and proprietary technology.">
+<meta name="description" content="Join Niuro. Chilean tech company. USD salaries, 1-7 day process. Real AI projects and proprietary technology.">
 <meta property="og:title" content="Niuro Careers">
-<meta property="og:description" content="Chilean tech company. Salaries in USD, 1-7 day process. Real AI projects.">
+<meta property="og:description" content="Chilean tech company. USD salaries, 1-7 day process. Real AI projects.">
 <title>Niuro Careers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -474,6 +474,27 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
   .testimonial-layout { grid-template-columns: 1fr !important; }
   .nav-cta { padding: 8px 16px; font-size: 13px; }
 }
+
+/* ── Print / PDF optimization ── */
+@media print {
+  @page { size: A4; margin: 20mm 15mm; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .nav { position: static; border-bottom: 2px solid var(--navy); }
+  .nav-cta { display: none; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal .grid-3 > *, .reveal .grid-2 > *, .reveal .grid-4 > * { opacity: 1 !important; transform: none !important; }
+  .gold-card:hover, .navy-card:hover, .navy-accent-card:hover, .step-card:hover { transform: none; box-shadow: none; }
+  .hero { padding: 40px 0 32px; }
+  .hero::before { display: none; }
+  section { padding: 40px 0 !important; }
+  .sec-navy::before, .sec-navy::after { display: none; }
+  .sec-parchment { break-inside: avoid; }
+  .grid-3, .grid-2, .grid-4 { break-inside: avoid; }
+  .gold-card, .navy-card, .navy-accent-card, .terminal, .step-card { break-inside: avoid; }
+  .testimonial-layout { break-inside: avoid; }
+  .footer { break-before: avoid; }
+  a[href]::after { content: none; }
+}
 </style>
 </head>
 <body>
@@ -498,7 +519,7 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
       🚀 Hiring: Engineers, Data &amp; Product
     </div>
     <h1><span class="code-tag"><span class="bracket">&lt;</span>Your Career<span class="slash">/</span><span class="bracket">&gt;</span></span> to the<br>next level <span class="code-brace">{AI-Native}</span><span class="cursor-blink">_</span></h1>
-    <p class="subtitle" style="margin-top:20px;">Chilean tech company. Salaries in <strong>USD</strong>, <strong>1-7 day</strong> process. Real AI projects and proprietary technology.</p>
+    <p class="subtitle" style="margin-top:20px;">Chilean tech company. <strong>USD</strong> salaries, <strong>1-7 day</strong> process. Real AI projects and proprietary technology.</p>
     <div style="display:flex;justify-content:center;gap:40px;margin:32px 0 40px;flex-wrap:wrap;">
       <div style="text-align:center;">
         <p style="font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--navy);line-height:1;">90%+</p>
@@ -526,7 +547,7 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
     <span class="section-label">// about_niuro</span>
     <h2 style="margin-bottom:16px;">We are a Chilean <span class="code-brace">{tech}</span> company</h2>
     <div class="gold-card">
-      <p style="font-size:16px;line-height:1.7;">We build <strong>AI products</strong> and proprietary technology that solve real operational challenges. When you join Niuro, you work on client projects or our own technology. You are always building.</p>
+      <p style="font-size:16px;line-height:1.7;">We build <strong>AI products</strong> that solve real operational bottlenecks: ATS, AI Interviewer, AI Recruiter, natural language workflow automation, among others. We also do <strong>consulting and staff augmentation</strong> for companies in <strong>the US, Canada, and Latin America</strong>. When you join Niuro, you work on client projects or our own technology. You are always building.</p>
     </div>
   </div>
 </section>
@@ -562,6 +583,10 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
       </div>
     </div>
 
+    <div class="contract-banner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+      <p>Contractor via DEEL · 100% remote · Full time, part time or freelance depending on client</p>
+    </div>
   </div>
 </section>
 
@@ -620,7 +645,7 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
   <div class="container">
     <span class="section-label">// from_the_team</span>
 
-    <p class="testimonial-pull">Once you're in, <span style="background:linear-gradient(135deg, #050F41, #1A2A5E, #8B7A3A, #FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">you access the Niuro ecosystem.</span></p>
+    <p class="testimonial-pull">You'll never be an external "resource". <span style="background:linear-gradient(135deg, #050F41, #1A2A5E, #8B7A3A, #FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">You access the Niuro ecosystem.</span></p>
 
     <div class="testimonial-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
       <!-- Left: context -->
@@ -655,6 +680,79 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
           </div>
         </div>
         <p style="font-style:italic;font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">"I had a complex technical challenge in my project and Niuro colleagues guided me to solve it. That's how I better understood something new to me. Being able to reach out to the company is what feels most like being part of a community."</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ 6. BENEFICIOS (Terminal Cards) ═══ -->
+<section class="sec-navy reveal" style="padding:72px 0;">
+  <div class="container">
+    <span class="section-label">// perks</span>
+    <h2 style="margin-bottom:32px;"><span class="code-tag"><span class="bracket">&lt;</span>Benefits<span class="slash">/</span><span class="bracket">&gt;</span></span> that matter</h2>
+
+    <div class="grid-2">
+      <!-- Terminal 1: Perks -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot" style="background:var(--dot-red);"></span>
+          <span class="terminal-dot" style="background:var(--dot-yellow);"></span>
+          <span class="terminal-dot" style="background:var(--dot-green);"></span>
+          <span class="terminal-title">perks.md</span>
+        </div>
+        <div class="terminal-header">WHAT YOU GET</div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">💻 <strong>Latest model hardware</strong></p>
+            <p class="terminal-item-desc">No equipment? We provide it with purchase option at a discount.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">💰 <strong>Performance bonuses</strong></p>
+            <p class="terminal-item-desc">Based on clear project goals.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">📊 <strong>Vacation</strong></p>
+            <p class="terminal-item-desc">2 weeks after completing 1 year at Niuro.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">🏥 <strong>Health &amp; Wellness</strong></p>
+            <p class="terminal-item-desc">Resources to support your well-being.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal 2: Growth -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot" style="background:var(--dot-red);"></span>
+          <span class="terminal-dot" style="background:var(--dot-yellow);"></span>
+          <span class="terminal-dot" style="background:var(--dot-green);"></span>
+          <span class="terminal-title">growth.md</span>
+        </div>
+        <div class="terminal-header">LEVEL UP</div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">🎓 <strong>Continuous learning</strong></p>
+            <p class="terminal-item-desc">Courses and training aligned with your current project.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">👥 <strong>Active community</strong></p>
+            <p class="terminal-item-desc">Technical meetings, Slack, and access to experts.</p>
+          </div>
+        </div>
+        <div class="terminal-item">
+          <div>
+            <p class="terminal-item-title">🚀 <strong>Path to x10 Engineer</strong></p>
+            <p class="terminal-item-desc">Multiply your impact with AI, real product ownership, and peer mentorship.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -702,7 +800,7 @@ h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
       </div>
     </div>
 
-    <p style="margin-top:24px;font-size:14px;color:var(--sub-text);">If your profile isn't on the list but you think you should be here, <a href="mailto:hiring@niuro.io" style="color:var(--teal);text-decoration:underline;text-underline-offset:3px;">reach out to us</a>.</p>
+    <p style="margin-top:24px;font-size:14px;color:var(--sub-text);">If your profile isn't on the list but you think you should be here, <a href="mailto:hiring@niuro.io" style="color:var(--teal);text-decoration:underline;text-underline-offset:3px;">write to us</a>.</p>
   </div>
 </section>
 
